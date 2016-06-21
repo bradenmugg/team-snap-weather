@@ -23,7 +23,7 @@ get '/oauth2/callback' do
 end
 
 def get_token(code)
-  response = HTTParty.post("https://auth.teamsnap.com/oauth/token?client_id=94ff5443c6026c1a30765180b8a4700f5ded6630175386b46995728132e3cc36&client_secret=043700e9324f83cbe6ee68cf1655b410a9358eb0582efc26c0090134c3105f89&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth2%2Fcallback&code=#{code}&grant_type=authorization_code")
+  response = HTTParty.post("https://auth.teamsnap.com/oauth/token?client_id=94ff5443c6026c1a30765180b8a4700f5ded6630175386b46995728132e3cc36&client_secret=043700e9324f83cbe6ee68cf1655b410a9358eb0582efc26c0090134c3105f89&redirect_uri=https%3A%2F%2Fteam-snap-weather.herokuapp.com%2Foauth2%2Fcallback&code=#{code}&grant_type=authorization_code")
   result = JSON.parse(response.body)
   result['access_token']
 end
