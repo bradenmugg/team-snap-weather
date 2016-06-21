@@ -1,0 +1,10 @@
+<% @data.each do |event| %>
+  <div class="event">
+  <h2><%= "Name: " %><%= event.name || "N/A" %></h2>
+  <p><%= "Start Time: "%><%= event.start_time || "N/A" %></p>
+  <p><%= "End Time: "%><%= event.end_time || "N/A" %></p>
+  <p><%= "Temperature: "%><%= event.temperature.to_s || "N/A" %></p>
+  <p><%= "Chance of Precipitation: "%><%= (event.precipitation_chance * 100).to_s || "N/A" %></p>
+  <p><%= "Precipitation Type: "%><%= event.precipitation_type || "N/A"%></p>
+  </div>
+<% end %>
